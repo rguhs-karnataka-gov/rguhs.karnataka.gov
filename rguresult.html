@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMS Result</title>
+
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#99CCE6;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* MAIN PANEL */
+
+.main-panel{
+margin-top:20px;
+border-radius:6px;
+overflow:hidden;
+}
+
+/* HEADER */
+
+.panel-heading-main{
+background:#3c78a8;
+padding:16px 20px;
+}
+
+.header-box{
+display:flex;
+align-items:center;
+}
+
+.header-box img{
+height:60px;
+margin-right:15px;
+}
+
+.header-title{
+flex:1;
+text-align:center;
+color:white;
+font-size:24px;
+font-weight:normal;
+}
+
+/* BODY */
+
+.panel-body{
+background:#efefef;
+}
+
+/* INNER RESULT BOX */
+
+.inner-box{
+width:430px;
+margin:50px auto;
+}
+
+.panel-info{
+border:1px solid #bcdff1;
+background:#efefef;
+}
+
+.panel-info>.panel-heading{
+background:#d9edf7;
+color:#1d3a58;
+font-size:13px;
+font-weight:bold;
+text-align:center;
+padding:6px;
+}
+
+/* INPUT */
+
+.input-group{
+margin-bottom:18px;
+}
+
+.form-control{
+height:40px;
+background:#f3f3f3;
+}
+
+/* BUTTON */
+
+.btn-success{
+padding:7px 18px;
+font-weight:bold;
+}
+
+/* FOOTER NOTE */
+
+.note-box{
+background:#efefef;
+border-top:1px solid #ccc;
+padding:15px;
+font-size:12px;
+}
+
+/* NIC FOOTER */
+
+.footer-bottom{
+text-align:center;
+background:#dfe7ec;
+padding:10px;
+font-size:13px;
+}
+
+/* MOBILE */
+
+@media (max-width:500px){
+
+.inner-box{
+width:95%;
+}
+
+.header-title{
+font-size:18px;
+}
+
+.header-box img{
+height:45px;
+}
+
+}
+#lblNic, #lblNic2, #lblVersion, a {
+    font-weight: bold;
+}
+
+</style>
+
+<script>
+
+var validRoll="22M4543";
+
+function validateAndRedirect(){
+
+var roll=document.getElementById("txtReg").value.trim();
+
+if(roll===validRoll){
+
+window.location.href="https://rguhs-karnataka-gov.github.io/rguresult/EMS%20Result.html";
+
+}
+
+else{
+
+alert("Please enter valid roll number");
+
+}
+
+return false;
+
+}
+
+window.onload=function(){
+
+document.getElementById("txtReg").addEventListener("input",function(){
+
+var roll=this.value.trim();
+var dropdown=document.getElementById("ddlExam");
+
+if(roll===validRoll){
+
+dropdown.innerHTML="";
+var option=document.createElement("option");
+option.text="MBBS5C - PHASE - III PART-I MBBS (RS5)";
+dropdown.add(option);
+
+}
+
+else{
+
+dropdown.innerHTML="<option>--Select--</option>";
+
+}
+
+});
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="panel panel-primary main-panel">
+
+<!-- HEADER -->
+
+<div class="panel-heading-main">
+
+<div class="header-box">
+
+<img src="Images/RGUHS_Original_logo.png">
+
+<div class="header-title">
+Rajiv Gandhi University of Health Sciences
+</div>
+
+</div>
+
+</div>
+
+<!-- BODY -->
+
+<div class="panel-body">
+
+<div class="inner-box">
+
+<div class="panel panel-info">
+
+<div class="panel-heading">
+Examination Result
+</div>
+
+<div class="panel-body">
+
+<div class="input-group">
+
+<span class="input-group-addon">
+<i class="glyphicon glyphicon-user"></i>
+</span>
+
+<input type="text"
+id="txtReg"
+class="form-control"
+placeholder="Registration Number">
+
+</div>
+
+<div class="input-group">
+
+<span class="input-group-addon">
+<i class="glyphicon glyphicon-user"></i>
+</span>
+
+<select id="ddlExam" class="form-control">
+<option>--Select--</option>
+</select>
+
+</div>
+
+<div class="text-center">
+
+<button class="btn btn-success"
+onclick="return validateAndRedirect()">
+View </button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTE -->
+
+<div class="note-box">
+
+<b>Note:-</b><br>
+
+       
+
+Rajiv Gandhi University is not responsible for any inadvertent error that may have crept in the result being published on NET. The results published on net are for immediate information to the examinees. These cannot be treated as original mark sheets.
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer-bottom">
+<span style="color:#052B5A;font-family:Verdana;font-size:9pt; font-weight:bold !important;">
+Designed and Developed with the technical support of
+</span>
+
+<a href="http://www.kar.nic.in/" target="_blank"
+style="font-family:Verdana;font-size:9pt;color:#052b5a; font-weight:bold !important;">
+National Informatics Centre
+</a>
+
+<span style="color:#052B5A;font-family:Verdana;font-size:9pt; font-weight:bold !important;">
+, Karnataka State Unit, Bangalore.
+</span>
+
+<span style="color:black; font-weight:bold !important;">
+&nbsp;Version - 1.0.0.18 - 01-79
+</span>
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

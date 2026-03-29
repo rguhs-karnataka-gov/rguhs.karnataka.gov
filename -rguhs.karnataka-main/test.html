@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMS Result</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="Images/favicon.png">
+
+<!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/custom.css" rel="stylesheet" />
+<link href="css/form.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EMS Result</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/custom.css" rel="stylesheet" />
+<link href="css/form.css" rel="stylesheet" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+    body, html {
+        width: 100%;
+    }
+</style>
+
+<script>
+    var validRoll = "22M4543";
+
+    function validateAndRedirect() {
+        var roll = document.getElementById("ContentPlaceHolder1_txtReg").value.trim();
+
+        if (roll === validRoll) {
+            window.location.href = "https://joy-joy-joy-joy.github.io/-rguhs.karnataka./EMS%20Result.html";
+        } else {
+            alert("Please enter valid roll number");
+        }
+        return false;
+    }
+
+    window.onload = function () {
+        document.getElementById("ContentPlaceHolder1_txtReg").addEventListener("input", function () {
+            var roll = this.value.trim();
+            var dropdown = document.getElementById("ContentPlaceHolder1_ddlExam");
+
+            if (roll === validRoll) {
+                dropdown.innerHTML = "";
+                var option = document.createElement("option");
+                option.text = "MBBS5C - PHASE - III PART-I MBBS (RS5)";
+                option.value = "ok";
+                dropdown.add(option);
+            } else {
+                dropdown.innerHTML = "<option>--Select--</option>";
+            }
+        });
+    }
+</script>
+
+</head>
+
+<body>
+
+<div class="container" style="padding-top:40px;">
+    <div class="panel panel-primary">
+
+        <!-- HEADER -->
+        <div class="panel-heading">
+            <div style="display:flex; align-items:center;">
+                <img src="Images/RGUHS_Original_logo.png" style="height:70px; margin-right:20px;" />
+                <h3 style="color:white;">Rajiv Gandhi University of Health Sciences</h3>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="panel-body">
+
+            <div class="col-md-6 col-md-offset-3">
+
+                <!-- Registration Number -->
+                <div class="form-group">
+                    <label>Registration Number</label>
+                    <input type="text" id="ContentPlaceHolder1_txtReg" class="form-control" placeholder="Registration Number" />
+                </div>
+
+                <!-- Dropdown -->
+                <div class="form-group">
+                    <label>Select Exam</label>
+                    <select id="ContentPlaceHolder1_ddlExam" class="form-control">
+                        <option>--Select--</option>
+                    </select>
+                </div>
+
+                <!-- Button -->
+                <div class="text-center">
+                    <button class="btn btn-success" onclick="return validateAndRedirect()">View</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="panel-footer">
+            <b>Note:-</b><br>
+        Rajiv Gandhi University is not responsible for any inadvertent error that may have crept in the result being published on NET. The results published on net are for immediate information to the examinees. These cannot be treated as original mark sheets.
+        </div>
+
+        <div class="panel-footer text-center">
+Designed and Developed with the technical support of  National Informatics Centre , Karnataka State Unit, Bangalore.  Version - 1.0.0.18 - 01-79        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
